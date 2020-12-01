@@ -2,13 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gsg_training/second_screen.dart';
 
 void main() {
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.light,
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
     ),
   );
 }
@@ -47,12 +48,18 @@ class MyName extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: Text(
-                    'Save',
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 16,
-                        color: Colors.blue),
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Screen2()));
+                    },
+                    child: Text(
+                      'Save',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 16,
+                          color: Colors.blue),
+                    ),
                   ),
                 ),
               ],
